@@ -1,0 +1,17 @@
+---
+### Live profile
+spring:
+  profiles: live
+
+backbase:
+  a2a:
+    idProvider:
+      type: "outbound-integration"
+  payveris:
+    baseUrl: https://test-api.regrpayverisbp.com/api/services/
+    version: 7.24
+    clientCode: pleaseAddHereYourClientCode
+    apiKey: pleaseAddHereYourApiKey
+    sso:
+      url: https://test.regrpayverisbp.com/pp/sso/eu/
+

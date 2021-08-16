@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "rate": {
+        "type": "number",
+        "description": "Exchange rate value"
+      },
+      "source": {
+        "type": "string",
+        "description": "Source (send) currency code"
+      },
+      "target": {
+        "type": "string",
+        "description": "Target (receive) currency code"
+      },
+      "time": {
+        "type": "string",
+        "description": "Timestamp for exchange rate"
+      }
+    },
+    "required": [
+      "rate",
+      "source",
+      "target",
+      "time"
+    ]
+  }

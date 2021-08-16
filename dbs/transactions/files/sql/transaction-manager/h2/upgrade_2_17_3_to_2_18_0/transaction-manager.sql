@@ -1,0 +1,2 @@
+SET DEFINE OFF;
+ALTER TABLE fin_txn MODIFY sequence_number DECIMAL(20, 0);

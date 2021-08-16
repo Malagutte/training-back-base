@@ -1,0 +1,24 @@
+---
+### Live profile
+spring:
+  profiles: live
+  datasource:
+    driver-class-name: ${spring.datasource.driver-class-name}
+    username: ${spring.datasource.username.payment-order-service}
+    password: ${spring.datasource.password.payment-order-service}
+    url: ${spring.datasource.url.payment-order-service}
+
+backbase:
+  payments:
+    limits:
+      enabled: false
+    audit:
+      enabled: false
+    closed:
+      enabled: false
+
+#logging:
+#  level:
+#    com.backbase: DEBUG
+#    org.springframework: INFO
+

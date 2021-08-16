@@ -1,0 +1,9 @@
+---
+spring:
+  profiles: mysql
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/versionmanagement?useSSL=false
+    username: root
+    password: root

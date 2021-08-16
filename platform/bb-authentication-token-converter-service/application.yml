@@ -1,0 +1,91 @@
+## Registry
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    nonSecurePort: ${server.port:8080}
+    metadataMap:
+      public: true
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8080}/registry/eureka/
+
+## SSO
+sso:
+  jwt:
+    external:
+      type: signedEncrypted
+      signature:
+        key:
+          type: ENV
+          value: EXTERNAL_SIG_SECRET_KEY
+      encryption:
+        key:
+          type: ENV
+          value: EXTERNAL_ENC_SECRET_KEY
+
+spring:
+  cache:
+    type: GENERIC
+  servlet:
+    multipart:
+      enabled: false
+
+backbase:
+  activemq:
+    enabled: false
+  events:
+    enabled: false
+  security:
+    internal-jwt-consumer:
+      enabled: false
+    http:
+      public-paths-configurer-enabled: false
+      authorized-configurer-enabled: false
+  token-converter:
+    enableCookieFilter: false
+    cache:
+      enabled: false
+    upstreamPrefix: upstream-
+    claimsMapping:
+      - external: usr_country
+        internal: usr_country
+        required: false
+      - external: tid
+        internal: tid
+        required: false
+      - external: anexp
+        internal: anexp
+        required: true
+      - external: anloc
+        internal: anloc
+        required: true
+      - external: cnexp
+        internal: cnexp
+        required: true
+      - external: enbl
+        internal: enbl
+        required: true
+      - external: iss
+        internal: iss
+        required: false
+      - external: grp
+        internal: grp
+        required: false
+      - external: iat
+        internal: iat
+        required: false
+      - external: exp
+        internal: exp
+        required: false
+      - external: naf
+        internal: naf
+        required: false
+    jwt:
+      signatureMode: symmetric-key
+      signingKey: ${SIG_SECRET_KEY:JWTSecretKeyDontUseInProduction!}
+      #signatureMode: asymmetric-key-pair
+      #keyPair:
+        #location: file:///my-path/keystore.jks
+        #alias: my-key-name
+        #password: my-key-password

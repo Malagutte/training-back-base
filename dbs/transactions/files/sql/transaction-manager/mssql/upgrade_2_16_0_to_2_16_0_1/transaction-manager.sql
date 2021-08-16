@@ -1,0 +1,2 @@
+ALTER TABLE fin_txn ADD additions NVARCHAR(MAX)
+GO

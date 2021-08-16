@@ -1,0 +1,30 @@
+
+backbase:
+  web:
+    security:
+      enabled: true
+  mobile:
+    tokenResolver:
+      type: "device_management"
+      url: ""
+    isProduction: false
+    ios:
+      isFirebase: false
+      topic: "com.backbase.poc.pushnotifications"
+    credentials:
+      encryption-config:
+        keyHashIterationCount: 65536
+        keyLength: 128
+        keyAlgorithm: PBKDF2WithHmacSHA256
+        transformation: AES/CBC/PKCS5Padding
+        password: ENC(SDtYhoN/QzBK1+rEomjiwMRR4Jg7s0w6)
+      initpass: password
+---
+spring:
+  profiles: mysql
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pushintegration?useSSL=false
+    username: root
+    password: root

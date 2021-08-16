@@ -1,0 +1,2 @@
+SET DEFINE OFF;
+ALTER TABLE fin_txn ADD creation_time timestamp NULL, ADD creation_time_offset VARCHAR(6) NULL,  ADD creation_timestamp timestamp NULL,ADD inserted_at timestamp NULL, ADD updated_at timestamp NULL;

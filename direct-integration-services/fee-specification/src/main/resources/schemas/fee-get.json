@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "fee": {
+      "type": "number",
+      "javaType": "java.lang.Double"
+    }
+  },
+  "required": [
+    "fee"
+  ]
+}
